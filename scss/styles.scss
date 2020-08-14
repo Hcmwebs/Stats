@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500&display=swap');
+$font-stack:'Montserrat', sans-serif;
+$bgColor:#322A62;
+$cardBg:#382F6E;
+$cardWrapperBg:#57417F;
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body{
+
+    font-family: $font-stack;
+    font-weight: 300;
+    display: flex;
+    justify-content: center;
+    align-items:center;
+}
+
+.container{
+    width: 1600px;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: $bgColor;
+}
+
+.card{
+    width:960px;
+    height: 690px;
+    background: $cardBg;
+    display: grid;
+    justify-content: center;
+    align-items:center;
+
+    &__wrapper{
+
+        display: grid;
+        place-items: center;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+        width: 1000px;
+        height:634px;
+        padding: 0 20px;
+        overflow: hidden;
+        background-color:$cardWrapperBg;
+
+            .text {
+            display: flex;
+            flex-direction: column;
+            align-items:start;
+            padding: 0 20px;
+
+            h1{
+                color:#fff;
+                font-size: 38px;
+                margin-bottom: 20px;
+            }
+
+            p{
+                color:#fff;
+                font-size: 18px;
+                margin-bottom: 10px;
+                text-align: justify;
+            }
+
+            button{
+
+                display: inline-block;
+                padding:20px;
+                margin: 10px;
+                border-radius: 5px ;
+                border: none;
+                font-size: 18px;
+                text-transform: capitalize;
+                color:#fff;
+                background-color: lighten($cardWrapperBg,10%) ;
+            }
+        }
+        .stats{
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap:50px;
+            padding: 0 20px;
+
+            &-item{
+                h2{
+                    font-size:48px;
+                    color:#fff;
+                    margin-bottom: 20px;
+                }
+
+                p{
+                    font-size: 12px;
+                    opacity: 70%;
+                    color:#fff;
+                    text-transform: uppercase;
+                    margin-bottom: 30px;
+                    text-align: center;
+                }
+            }
+        }
+
+
+    }
+}
+
+.border-bottom{
+    border-bottom:2px solid rgba(255,255,255, 0.4);
+}
+
+
+@media(max-width:500px){
+    .container{
+        width: 100%;
+    }
+    .card{
+        width: 100%;
+        height: 960px;
+
+        &__wrapper{
+            width: 100%;
+            grid-template-columns: 1fr;
+        }
+    }
+
+
+}
